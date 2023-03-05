@@ -1,0 +1,242 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+.heading {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+.carousel-item {
+  height: 100vh;
+  min-height: 300px;
+}
+
+.carousel-caption {
+  bottom: 220px;
+  z-index: 2;
+}
+
+.carousel-caption h5 {
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+
+.carousel-caption p {
+  width: 60%;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.carousel-inner::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.navbar-light .navbar-brand {
+  color: #000;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
+  color: #000;
+}
+
+.navbar-light .navbar-nav .navbar-link {
+  color: #000;
+}
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+.w-100 {
+  height: 100vh;
+}
+
+.service .card-body i {
+  font-size: 50px;
+}
+
+.pad {
+  padding-top: 70px;
+}
+
+.ppad {
+  padding-top: 110px;
+}
+
+/* Team */
+.section-white {
+  background: #fff;
+  padding: 70px 0;
+}
+
+.team-item {
+  background: #f4f5f6;
+  text-align: center;
+  margin: 20px 0;
+  padding: 50px 20px 40px 20px;
+  border-radius: 8px 8px;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.team-item:hover {
+  background: #FFC72C;
+  color: white;
+}
+
+.btn:hover {
+  background: white;
+}
+
+.team-item h3 {
+  margin: 20px 0 1px 0 !important;
+  color: #454545;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.section-subtitle {
+  white-space: pre-line;
+}
+
+.team-item:hover h3 {
+  color: white;
+}
+
+.team-info {
+  display: block;
+  margin-bottom: 0;
+}
+
+.team-info p {
+  color: #acacac;
+  font-style: italic;
+}
+
+.team-info:hover p {
+  color: white;
+}
+
+.team-img {
+  max-width: 140px;
+  padding: 6px 6px;
+  background-color: #dedede;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+ul.team-icon {
+  margin-top: 25px;
+}
+
+ul.team-icon li {
+  display: inline-block;
+  margin: 0 3px;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+ul.team-icon li a {
+  margin: 0;
+  display: inline-block;
+  padding: 8px 8px;
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  line-height: 18px;
+  background-color: white;
+  border-radius: 50%;
+  color: white;
+}
+
+ul.team-icon li a.twitter {
+  background-color: #4099ff
+}
+
+ul.team-icon li a.facebook {
+  background-color: #db5998
+}
+
+ul.team-icon li a.instagram {
+  background-color: #F56040
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(rgba(225, 225, 225, 0.7), rgba(225, 225, 225, 0.3)),
+    url("https://i.pinimg.com/originals/e6/90/5c/e6905c4ac56db067d3b265763af49d22.jpg");
+    background-size: 100% 100%;
+    width:1200px;
+    margin:0 auto;
+}
+
+.formtwo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(rgba(225, 225, 225, 0.7), rgba(225, 225, 225, 0.3)),
+    url("https://www.atlasandboots.com/wp-content/uploads/2019/05/ama-dablam2-most-beautiful-mountains-in-the-world.jpg");
+    background-size: 100% 100%;
+    width:1200px;
+    margin:0 auto;
+}
+
+.formthree {
+  height: 100vh;
+  background: linear-gradient(rgba(225, 225, 225, 0.7), rgba(225, 225, 225, 0.3)),
+    url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8OHx8fGVufDB8fHx8&w=1000&q=80");
+    background-size: cover;
+}
+
+.contactform {
+  height: 100vh;
+  background: linear-gradient(rgba(225, 225, 225, 0.7), rgba(225, 225, 225, 0.3)),
+    url("https://www.rei.com/dam/parrish_091412_0679_main_lg.jpg");
+    background-size: cover;
+}
+
+
+.sign {
+  color: #454545;
+  text-align: center;
+}
+
+.form-group {
+  padding: 15px;
+  margin: 10px 0px;
+}
