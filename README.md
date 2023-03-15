@@ -77,6 +77,10 @@ User/token - When we fetch from our API, we can provide a token to get user info
 
 
 ## Authentication/Authorization
+secure route to which means user can login and coauthorise certain controllers. Post cannot be done unless loged in as a user.
+Trail user relationship is then added.
+
+
 oauth
 
 ## Challenges
