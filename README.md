@@ -40,6 +40,11 @@ Technologies used to design this app included the following:
 ### Backend
 
 Considerations had to be made on the type of relationship between each of the models. To plan this, an ERD (Entity Relationship Diagram) was mapped out to visualise the concepts.
+The relationships are described in the models as follows:
+SQLAlchemy must be told what the relationships are so that it can both make the tables in the database, and allow me to do serilization and nest items inside each other at a later stage
+The relationship describes the model which refers to the classes of the individual trail model and location model. Secondly it contains a backpopulates method which describes the other side of the relationship and shows the connections between the models
+
+A trail location model contains a snigle trail and single location as these are being connected. This creates a unique pairing and individual row in the SQL table.
 
 Serialization/De-serialization
 Required to convert my objects into a transferrable format that can be sent or communicated.
@@ -48,6 +53,7 @@ de-serialization to convert JSON to Python objects.
 postgres was used as a means to store the apps required data as tables of rows and columns with relatioinships between the models. object relational mapping must be considered. To test this on our local server, Tableplus was used.
 
 to allow locations/comments to be nested within the trails data.
+
 
 ### Frontend
 
