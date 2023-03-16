@@ -95,23 +95,7 @@ class TrailSchema(ma.SQLAlchemyAutoSchema):
 
 Lastly, Flask-marshmallow
 
-### Frontend
 
-
-
-The frontend was made up of several different components including:
-Promises - Uses async functions to retrieve information from an API
-useEffect to run a section of code everytime a specific part of state changes on the rendered screen
-Functions
-useState - to tell React to remember an action such as const [trail, setTrail]
-Event handling - to run a section of code when commanded by the user - handleClick...
-props - uses a parent child relationship and allows data to be used within a function
-
-React router:
-Routes - To ensure the page does not reload howver the components in the page are controlled by the routes.../trails, /location
-Links - To redrect the user to another page without reloading the page <Link...>
-Hooks - useParams lets me get variables from a route
-Hooks - useNavigate gives me a navigate function. Used to redirect the page inside functions
 
 
 
@@ -146,6 +130,123 @@ user = user_schema.load(user_dictionary)
 return user_schema.jsonify(user)
 ```
 
+### Frontend
+
+
+Starting off the frontend, I used Excalidraw to sketch different front page layouts and explore how I wanted the frontpage to render to attract the user. This helped me understand the different pages I wanted to include, how I wanted the user to experience navigating from page to page and finally what would be included on the navbar for a general user as well as once a user is logged in as this would provide different options. React was used as the foundation to build the frontend.
+
+The several components on the frontend included the following methods:
+
+* ```useEffect``` was used to run a section of code everytime a specific part of state changes on the rendered screen. Within this, ```promises``` were used to run async functions to retrieve information from an API:
+
+```
+React.useEffect(() => {
+    async function fetchTrails() {
+      const resp = await fetch(`${baseUrl}/trails/${trailId}`)
+      const TrailsData = await resp.json()
+      updateTrails(TrailsData)
+      console.log(TrailsData);
+      
+    }
+    fetchTrails()
+  }, [])
+```
+
+
+* ```useState``` was used to tell React to remember an action such as a change on the screen. For example, a variable - const [newTrail, setNewTrail] is created to show different parameters the user can add when posting a new trail from their account.
+
+```
+  const [newTrail, setNewTrail] = useState({
+    name: "",
+    duration: "",
+    description: "",
+    length: "",
+    difficulty: "",
+    image: "",
+    map: ""
+  })
+```
+
+
+* Event handling was used to run a section of code when commanded by the user e.g. a submit button runs the below code when adding a new trail post. When the code is run, the information is posted through ```axios``` to the trails database:
+
+```
+ async function handleSubmit(e: SyntheticEvent) {
+    e.preventDefault()
+    try {
+      const token = localStorage.getItem('token')
+      const { data } = await axios.post(`${baseUrl}/trails`, newTrail, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      console.log(data)
+      navigate('/trails')
+    } catch (err: any) {
+      setErrorData(err.response.data.errors)
+    }
+  }
+```
+
+* Props are used which incorporates a parent child relationship and allows data to be used within a function. The interface must also be included to let the app know what the data type is. The below example is taken from the TrailCard component which is rendered when the user selects an individual trail card:
+
+```
+function TrailCard({ id, name, duration, length, difficulty, image, description, map }: ITrail) {
+  return ()
+  
+ }
+```
+
+Another similar method used was the ```spreader``` function which included all props from an ```Interface```:
+
+```
+<div className="row">
+            {trails?.map((trail: ITrail) => {
+              return <Trails
+                key={trail.id}
+                {...trail}
+              />
+            })}
+          </div>
+```
+
+
+* React router:
+Within the app file of the project, all of the routes to each page is shown. Routes are used to ensure the page does not reload however the components in the page are controlled by the routes, examples below:
+
+```
+<Router>
+      <Navbar user={user} setUser={setUser} />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/trails" element={<TrailList />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login fetchUser={fetchUser}/>} />
+          <Route path="/addtrail" element={<AddTrail />} />
+          <Route path="/trails/:trailId" element={<ShowTrail />} />
+        </Routes>
+      </main>
+    </Router>
+```
+
+
+* Links are used to redirect the user to another page without reloading the page. This example is included on the list of trail cards. When a card is selected, this link is loaded and the user is taken to the individual card page which includes a more in-depth description. This fetches information from the database by calling the trails unique ID:
+
+```
+<Link to={`/trails/${id}`} className="col-sm-6 col-md-4">
+      
+    </Link>
+```
+
+
+* Hooks - ```useParams``` is used to allow me to retrieve variables from a route:
+```
+const { trailId } = useParams()
+```
+
+```useNavigate``` is used to give me a navigate function. Used to redirect the page inside functions
+```
+
+```
 
 ## Challenges
 
