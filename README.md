@@ -243,12 +243,22 @@ Within the app file of the project, all of the routes to each page is shown. Rou
 const { trailId } = useParams()
 ```
 
-```useNavigate``` is used to give me a navigate function. Used to redirect the page inside functions
+```useNavigate``` is used to give me a navigate function. I used to redirect the page inside function. For example, the below code is run when a new trail is submited by a user, the user is automatically navigated to the home page.
 ```
-
+navigate('/')
 ```
 
 ## Challenges
 
+The biggest challenge of this project was understanding and implementing the various types of relationships between the models. Thought was required on which elements should be nested in others and how this would translate from the backend to the frontend in a way that was user-friendly.
+
 ## Wins
 
+I was successfully able to work through the problems I faced during this project by breaking down the problem into smaller, manageable issues and create a product which allows the user to explore and interact with different components. I also feel like this app aesthetically looks proffesional and it allowed me to get creative with CSS with the use of Bootstrap. I was able to successfully demostrate my knowledge of creating a secure app where users can create password protected accounts and contribute their experience with the rest of the world.
+
+## Future Additions
+
+I would like to continue working on this project in the future and add the following components:
+* Add a comments section on each expanded card where different users can post their reviws of each trail they experience.
+* Google maps API to show specific locations of each hike rather than a general map on the homepage.
+* Expand the brand by adding a hiking gear and apparel page.
