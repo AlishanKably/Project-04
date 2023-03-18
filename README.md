@@ -2,7 +2,7 @@
 ## The Hiking Club
 ### Overview
 
-For my fourth and final project, I have created an app for people that share my passion for hiking and want to explore the outdoors. The app allows users to filter through different regions of the UK to see locations of hikes which they may want to experience. Furthermore, the user can create a password protected account on the app which allows them to upload hikes they discover and want to share with the community. This was a solo project which was complete over the span of 2 weeks and incorporates a frontend, backend, API and database.
+For my fourth and final project, I have created an app for people that share my passion for hiking and want to explore the outdoors. The app allows users to filter through different regions of the UK to see locations of hikes which they may want to experience. Furthermore, the user can create a password protected account on the app which allows them to upload hikes they discover and want to share with the community. This was a solo project which was completed over the span of 2 weeks and incorporates a frontend, backend, API and database.
 
 ### Deployment link
 
@@ -34,14 +34,17 @@ Technologies used to design this app included the following:
 * Fly.io
 * Bit.io
 
+## Planning
+
+
 
 ## Build
 
 ### Backend
 
-An MVC approach was used on this project where models were firstly created to describe the different components of the app. Along with this, controllers were created to describe the methods for retrieving information via SQL from the postgresql database with the use of serializers to allow python to communicate with the database. These serializers are described within the schemas for each of the models.
+An MVC approach was used on this project where models were firstly created to describe the different components of the app. Along with this, controllers were created to describe the methods for retrieving information via SQL from the postgreSQL database with the use of serializers to allow Python to communicate with the database. These serializers are described within the schemas for each of the models.
 
-On this project, I used the Flask library which allowed me to incorporate flask-SQLAlchemy and marshmallow. Postgresql was used as a means to store the apps required data as tables of rows and columns within a relational SQL database, with relatioinships between the models. To test this on our local server, Tableplus was used. Object relational mapping (ORM) must be considered meaning I must convert between Python objects and database tables.
+On this project, I used the Flask library which allowed me to incorporate flask-SQLAlchemy and marshmallow. PostgreSQL was used as a means to store the apps required data as tables of rows and columns within a relational SQL database, with relationships between the models. To test this on our local server, TablePlus was used. Object relational mapping (ORM) must be considered meaning I must convert between Python objects and database tables.
 
 Considerations had to be made on the type of relationship between each of the models. To plan this, an ERD (Entity Relationship Diagram) was mapped out to visualise the concepts.
 
@@ -50,7 +53,7 @@ Considerations had to be made on the type of relationship between each of the mo
 
 
 
-The relationship describes the model which refers to the classes of the individual trail model and location model. Secondly it contains a backpopulates method which describes the other side of the relationship and shows the connections between the models. SQLAlchemy must be told what the relationships are so that it can both make the tables in the database and allow me to do serilization and to allow one models data to be nested within another. The relationships are described in the models as follows:
+The relationship describes the model which refers to the classes of the individual trail model and location model. Secondly it contains a backpopulates method which describes the other side of the relationship and shows the connections between the models. SQLAlchemy must be told what the relationships are so that it can both make the tables in the database and allow me to do serialisation and to allow one models data to be nested within another. The relationships are described in the models as follows:
 
 * Trail Model:
 ```
@@ -79,7 +82,7 @@ trail = db.relationship("TrailModel", back_populates="user")
 ```
 
 
-Serialization and de-serialization was a technique used within the backend. Serialiszation was required to convert objects into a transferrable format that can be sent or communicated whilst de-serialization to convert JSON to Python objects. This was shown with the use of schemas such as:
+Serialisation and de-serialisation was a technique used within the backend. Serialisation was required to convert objects into a transferrable format that can be sent or communicated whilst de-serialisation to convert JSON to Python objects. This was shown with the use of schemas such as:
 
 ```
 class TrailSchema(ma.SQLAlchemyAutoSchema):
@@ -93,15 +96,11 @@ class TrailSchema(ma.SQLAlchemyAutoSchema):
     include_fk = True
 ```
 
-Lastly, Flask-marshmallow
-
-
-
 
 
 ## Authentication/Authorization
 
-Authentication and authorization played a major role in this project. It was important to incorporate this to allow users to make account and securely log in. A ```secure route``` file was made to include the token for a user. JSON web token (JWT) was used as the protocol for authentication which involved a secure token creation when signing up and is implemented when loging in or when a user chooses to upload a trail. An element of this is the password hash function in the user model:
+Authentication and authorization played a major role in this project. It was important to incorporate this to allow users to make an account and securely log in. A ```secure route``` file was made to include the token for a user. JSON web token (JWT) was used as the protocol for authentication which involved a secure token creation when signing up and is implemented when logging in or when a user chooses to upload a trail. An element of this is the password hash function in the user model:
 
 ```
  @hybrid_property
@@ -137,7 +136,7 @@ Starting off the frontend, I used Excalidraw to sketch different front page layo
 
 The several components on the frontend included the following methods:
 
-* ```useEffect``` was used to run a section of code everytime a specific part of state changes on the rendered screen. Within this, ```promises``` were used to run async functions to retrieve information from an API:
+* ```useEffect``` was used to run a section of code every time a specific part of state changes on the rendered screen. Within this, ```promises``` were used to run async functions to retrieve information from an API:
 
 ```
 React.useEffect(() => {
@@ -210,7 +209,7 @@ Another similar method used was the ```spreader``` function which included all p
 
 
 * React router:
-Within the app file of the project, all of the routes to each page is shown. Routes are used to ensure the page does not reload however the components in the page are controlled by the routes, examples below:
+Within the app file of the project, all of the routes to each page are shown. Routes are used to ensure the page does not reload however the components in the page are controlled by the routes, examples below:
 
 ```
 <Router>
@@ -243,7 +242,7 @@ Within the app file of the project, all of the routes to each page is shown. Rou
 const { trailId } = useParams()
 ```
 
-```useNavigate``` is used to give me a navigate function. I used to redirect the page inside function. For example, the below code is run when a new trail is submited by a user, the user is automatically navigated to the home page.
+```useNavigate``` is used to give me a navigation function that could be used to redirect the page. For example, the below code is run when a new trail is submitted by a user, the user is automatically navigated to the home page.
 ```
 navigate('/')
 ```
@@ -254,11 +253,11 @@ The biggest challenge of this project was understanding and implementing the var
 
 ## Wins
 
-I was successfully able to work through the problems I faced during this project by breaking down the problem into smaller, manageable issues and create a product which allows the user to explore and interact with different components. I also feel like this app aesthetically looks proffesional and it allowed me to get creative with CSS with the use of Bootstrap. I was able to successfully demostrate my knowledge of creating a secure app where users can create password protected accounts and contribute their experience with the rest of the world.
+I was successfully able to work through the problems I faced during this project by breaking down the problem into smaller, manageable issues and creating a product which allows the user to explore and interact with different components. I also feel like this app aesthetically looks professional and it allowed me to get creative with CSS with the use of Bootstrap. I was able to successfully demonstrate my knowledge of creating a secure app where users can create password protected accounts and contribute their experience with the rest of the world.
 
 ## Future Additions
 
 I would like to continue working on this project in the future and add the following components:
-* Add a comments section on each expanded card where different users can post their reviws of each trail they experience.
+* Add a comments section on each expanded card where different users can post their reviews of each trail they experience.
 * Google maps API to show specific locations of each hike rather than a general map on the homepage.
 * Expand the brand by adding a hiking gear and apparel page.
