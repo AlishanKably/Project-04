@@ -36,7 +36,7 @@ Technologies used to design this app included the following:
 
 ## Planning
 
-
+It was important to carefully plan my components before starting work on the application to ensure my aims and goals were clear. This was done by drafting different pages on Excalidraw which helped to decide how the pages on the frontend would interact with eachother. From here I could work backwards to understand what models needed to be included in the backend to achieve the design goals. Due to the time constraints, it was important to effectively manage my time by setting myself deadlines mapped out on a Jira board. Refering back to this often would help me figure out what tasks were left to be completed to create working application. The aesthetics of this project was also an important aspect I gave importance to. Through the use of Bootstrap, I was able to plan the layout of my page and feel the experience the users would have on this application.
 
 ## Build
 
