@@ -36,7 +36,7 @@ Technologies used to design this app included the following:
 
 ## Planning
 
-It was important to carefully plan my components before starting work on the application to ensure my aims and goals were clear. This was done by drafting different pages on Excalidraw which helped to decide how the pages on the frontend would interact with each other. From here I could work backwards to understand what models needed to be included in the backend to achieve the design goals. Due to the time constraints, it was important to effectively manage my time by setting myself deadlines mapped out on a Jira board. Referring back to this often would help me figure out what tasks were left to be completed to create working application. The aesthetics of this project was also an important aspect I gave importance to. Through the use of Bootstrap, I was able to plan the layout of my page and feel the experience the users would have on this application.
+It was important to carefully plan my components before starting to work on the application to ensure my aims and goals were clear. This was done by drafting different pages on Excalidraw which helped to decide how the pages on the frontend would interact with each other. From here I could work backwards to understand what models needed to be included in the backend to achieve the design goals. Due to the time constraints, it was important to effectively manage my time by setting myself deadlines mapped out on a Jira board. Referring back to this often would help me figure out what tasks were left to be completed to create a working application. The aesthetics of this project was also an key aspect I gave importance to. Through the use of Bootstrap, I was able to plan the layout of my page and feel the experience the users would have on this application.
 
 ## Build
 
@@ -44,7 +44,7 @@ It was important to carefully plan my components before starting work on the app
 
 An MVC approach was used on this project where models were firstly created to describe the different components of the app. Along with this, controllers were created to describe the methods for retrieving information via SQL from the postgreSQL database with the use of serializers to allow Python to communicate with the database. These serializers are described within the schemas for each of the models.
 
-On this project, I used the Flask library which allowed me to incorporate flask-SQLAlchemy and marshmallow. PostgreSQL was used as a means to store the apps required data as tables of rows and columns within a relational SQL database, with relationships between the models. To test this on our local server, TablePlus was used. Object relational mapping (ORM) must be considered meaning I must convert between Python objects and database tables.
+On this project, I used the Flask library which allowed me to incorporate flask-SQLAlchemy and marshmallow. PostgreSQL was used as a means to store the apps required data as tables of rows and columns within a relational SQL database, with relationships between the models. To test this on our local server, TablePlus was used. Object relational mapping (ORM) must be considered, meaning I must convert between Python objects and database tables.
 
 Considerations had to be made on the type of relationship between each of the models. To plan this, an ERD (Entity Relationship Diagram) was mapped out to visualise the concepts.
 
@@ -53,7 +53,7 @@ Considerations had to be made on the type of relationship between each of the mo
 
 
 
-The relationship describes the model which refers to the classes of the individual trail model and location model. Secondly it contains a backpopulates method which describes the other side of the relationship and shows the connections between the models. SQLAlchemy must be told what the relationships are so that it can both make the tables in the database and allow me to do serialisation and to allow one models data to be nested within another. The relationships are described in the models as follows:
+The relationship describes the model which refers to the classes of the individual trail model and location model. Secondly it contains a backpopulates method which describes the other side of the relationship and shows the connections between the models. SQLAlchemy must be told what the relationships are so that it can both make the tables in the database and allow me to do serialisation and to allow one model's data to be nested within another. The relationships are described in the models as follows:
 
 * Trail Model:
 ```
@@ -75,7 +75,7 @@ trail = db.relationship("TrailModel", back_populates="locations")
 ```
 
 
-A trail location model contains a single trail and single location as these are being connected. This creates a unique pairing and individual row in the SQL table. Similarly, connections are made between the user model and the trails model to allow us to keep track of which user posted which trail and permissions can be implemented on the trail. This also allows us to search by user on frontend if required. This demonstrates a one to many relationship as many trails can be owned by a single user.
+A trail location model contains a single trail and single location as these are being connected. This creates a unique pairing and individual row in the SQL table. Similarly, connections are made between the user model and the trails model to allow us to keep track of which user posted which trail and permissions can be implemented on the trail. This also allows us to search by user on the frontend if required. This demonstrates a one to many relationship as many trails can be owned by a single user.
 
 ```
 trail = db.relationship("TrailModel", back_populates="user")
@@ -167,7 +167,7 @@ React.useEffect(() => {
 ```
 
 
-* Event handling was used to run a section of code when commanded by the user e.g. a submit button runs the below code when adding a new trail post. When the code is run, the information is posted through ```axios``` to the trails database:
+* Event handling was used to run a section of code when commanded by the user e.g. a submit button runs the below code when adding a new trail post. When the code is run, the information is posted through ```Axios``` to the trails database:
 
 ```
  async function handleSubmit(e: SyntheticEvent) {
@@ -194,7 +194,7 @@ function TrailCard({ id, name, duration, length, difficulty, image, description,
  }
 ```
 
-Another similar method used was the ```spreader``` function which included all props from an ```Interface```:
+Another similar method used was the ```spreader``` function which included all props from an ```interface```:
 
 ```
 <div className="row">
@@ -261,3 +261,7 @@ I would like to continue working on this project in the future and add the follo
 * Add a comments section on each expanded card where different users can post their reviews of each trail they experience.
 * Google maps API to show specific locations of each hike rather than a general map on the homepage.
 * Expand the brand by adding a hiking gear and apparel page.
+
+## Key learning
+
+The biggest take away from this project for me was the importance of planning a project and considering as much detail as possible before starting to write the code. During the process of making the application, new ideas are constatntly coming up, however it is important to go back to the original drafts and plans to see how these new ideas fit in with the structure of the project and the impacts it can have on other models.
