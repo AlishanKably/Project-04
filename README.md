@@ -38,6 +38,10 @@ Technologies used to design this app included the following:
 
 It was important to carefully plan my components before starting to work on the application to ensure my aims and goals were clear. This was done by drafting different pages on Excalidraw which helped to decide how the pages on the frontend would interact with each other. From here I could work backwards to understand what models needed to be included in the backend to achieve the design goals. Due to the time constraints, it was important to effectively manage my time by setting myself deadlines mapped out on a Jira board. Referring back to this often would help me figure out what tasks were left to be completed to create a working application. The aesthetics of this project was also an key aspect I gave importance to. Through the use of Bootstrap, I was able to plan the layout of my page and feel the experience the users would have on this application.
 
+Example of Excalidraw planning work in progress below:
+
+![](Images/image3.png)
+
 ## Build
 
 ### Backend
@@ -264,4 +268,4 @@ I would like to continue working on this project in the future and add the follo
 
 ## Key learning
 
-The biggest take away from this project for me was the importance of planning a project and considering as much detail as possible before starting to write the code. During the process of making the application, new ideas are constatntly coming up, however it is important to go back to the original drafts and plans to see how these new ideas fit in with the structure of the project and the impacts it can have on other models.
+The biggest take away from this project for me was the importance of planning a project and considering as much detail as possible before starting to write the code. During the process of making the application, new ideas are constantly coming up, however it is important to go back to the original drafts and plans to see how these new ideas fit in with the structure of the project and the impacts it can have on other models.
